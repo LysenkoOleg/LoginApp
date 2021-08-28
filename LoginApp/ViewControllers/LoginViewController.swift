@@ -20,13 +20,12 @@ class LoginViewController: UIViewController {
         welcomeVC.welcomeUserName = userName
     }
     
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        self.view.endEditing(true)
-    }
-    
     @IBAction func logInPressed() {
         if userNameTF.text != userName || passwordTF.text != password {
-            showAlert(with: "Invalid login or password", and: "Please, enter correct login and password")
+            showAlert(
+                with: "Invalid login or password",
+                and: "Please, enter correct login and password"
+            )
             passwordTF.text = ""
         }
     }
@@ -39,8 +38,7 @@ class LoginViewController: UIViewController {
         showAlert(with: "Oops!", and: "Your password is \(password)😉")
     }
     
-    @IBAction func unwind(for unwindSegue: UIStoryboardSegue) {
-        guard let _ = unwindSegue.source as? WelcomeViewController else { return }
+    @IBAction func unwind(segue: UIStoryboardSegue) {
         userNameTF.text = ""
         passwordTF.text = ""
     }
@@ -60,3 +58,19 @@ extension LoginViewController {
     }
 }
 
+extension LoginViewController: UITextFieldDelegate {
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super.touchesBegan(touches, with: event)
+        view.endEditing(true)
+    }
+
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        if textField == userNameTF {
+            passwordTF.becomeFirstResponder()
+        } else {
+            logInPressed()
+            performSegue(withIdentifier: "showWelcomeVC", sender: nil)
+        }
+        return true
+    }
+}
