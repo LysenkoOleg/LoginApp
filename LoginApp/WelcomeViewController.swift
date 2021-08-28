@@ -16,7 +16,7 @@ class WelcomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        welcomeUser.text = welcomeUserName
+        welcomeUser.text = "Welcome, \(welcomeUserName ?? "user")!"
     }
 
     @IBAction func logOutPressed() {

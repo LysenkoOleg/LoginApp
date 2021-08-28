@@ -12,18 +12,12 @@ class LoginViewController: UIViewController {
     @IBOutlet var userNameTF: UITextField!
     @IBOutlet var passwordTF: UITextField!
     
-    var userName = "Name"
-    var password = "Password"
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    }
+    private let userName = "User"
+    private let password = "Password"
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard let welcomeVC = segue.destination as? WelcomeViewController else {
-            return
-        }
-        welcomeVC.welcomeUserName = "Welcome, \(userName)!"
+        guard let welcomeVC = segue.destination as? WelcomeViewController else { return }
+        welcomeVC.welcomeUserName = userName
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -31,12 +25,10 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction func logInPressed() {
-        if userNameTF.text == userName && userNameTF.text != "" {
-            if passwordTF.text == password {
-                passwordTF.text = ""
-                return
-            } else { errorLogIn(); passwordTF.text = ""}
-        } else { errorLogIn(); passwordTF.text = "" }
+        if userNameTF.text != userName || passwordTF.text != password {
+            showAlert(with: "Invalid login or password", and: "Please, enter correct login and password")
+            passwordTF.text = ""
+        }
     }
     
     @IBAction func forgotUNPressed() {
@@ -48,9 +40,7 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction func unwind(for unwindSegue: UIStoryboardSegue) {
-        guard let _ = unwindSegue.source as? WelcomeViewController else {
-            return
-        }
+        guard let _ = unwindSegue.source as? WelcomeViewController else { return }
         userNameTF.text = ""
         passwordTF.text = ""
     }
@@ -62,17 +52,6 @@ extension LoginViewController {
         let alert = UIAlertController(
             title: title,
             message: message,
-            preferredStyle: .alert
-        )
-        let okAlert = UIAlertAction(title: "OK", style: .default)
-        alert.addAction(okAlert)
-        present(alert, animated: true)
-    }
-
-    private func errorLogIn(){
-        let alert = UIAlertController(
-            title: "Invalid login or password",
-            message: "Please, enter correct login and password",
             preferredStyle: .alert
         )
         let okAlert = UIAlertAction(title: "OK", style: .default)
