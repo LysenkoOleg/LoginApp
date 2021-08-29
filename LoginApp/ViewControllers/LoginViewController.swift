@@ -12,16 +12,28 @@ class LoginViewController: UIViewController {
     @IBOutlet var userNameTF: UITextField!
     @IBOutlet var passwordTF: UITextField!
     
-    private let userName = "User"
-    private let password = "Password"
+    private let userData = UserData(userName: "User", password: "Password")
+    private let person = Person(name: "Oleg Lysenko")
+    private let about = About(about: "Привет. Меня Зовут Олег. Мне 24 года и в данный момент я работаю менеджером по продажам")
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard let welcomeVC = segue.destination as? WelcomeViewController else { return }
-        welcomeVC.welcomeUserName = userName
-    }
+        let tabBarController = segue.destination as! UITabBarController
+        let viewControllers: [UIViewController]?
+        viewControllers = [tabBarController]
+          for viewController in viewControllers! {
+             if let welcomeVC = viewController as? WelcomeViewController {
+               tabBarController.tabBarItem.title = person.name
+                welcomeVC.welcomeUserName = person.name
+             } else if let navigationVC = viewController as? UINavigationController {
+                let aboutUserVC = navigationVC.topViewController as! AboutMePageOneViewController
+                aboutUserVC.aboutMe = about.about
+            }
+        }
+     }
+    
     
     @IBAction func logInPressed() {
-        if userNameTF.text != userName || passwordTF.text != password {
+        if userNameTF.text != userData.userName || passwordTF.text != userData.password {
             showAlert(
                 with: "Invalid login or password",
                 and: "Please, enter correct login and password"
@@ -31,11 +43,11 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction func forgotUNPressed() {
-       showAlert(with: "Oops!", and: "Your name is \(userName)😉")
+        showAlert(with: "Oops!", and: "Your name is \(userData.userName)😉")
     }
     
     @IBAction func forgotPassPressed() {
-        showAlert(with: "Oops!", and: "Your password is \(password)😉")
+        showAlert(with: "Oops!", and: "Your password is \(userData.password)😉")
     }
     
     @IBAction func unwind(segue: UIStoryboardSegue) {
