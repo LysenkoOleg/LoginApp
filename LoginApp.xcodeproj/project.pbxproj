@@ -7,7 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2C18822F26DC022D00C79D35 /* AboutMePageOneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C18822E26DC022C00C79D35 /* AboutMePageOneViewController.swift */; };
+		2C18822F26DC022D00C79D35 /* UserInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C18822E26DC022C00C79D35 /* UserInfoViewController.swift */; };
+		2C1FB0E526DF802200A94A01 /* ImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C1FB0E426DF802200A94A01 /* ImageViewController.swift */; };
 		2C8A087826D6A39A0008F896 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C8A087726D6A39A0008F896 /* AppDelegate.swift */; };
 		2C8A087A26D6A39A0008F896 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C8A087926D6A39A0008F896 /* SceneDelegate.swift */; };
 		2C8A087C26D6A39A0008F896 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C8A087B26D6A39A0008F896 /* LoginViewController.swift */; };
@@ -19,7 +20,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		2C18822E26DC022C00C79D35 /* AboutMePageOneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutMePageOneViewController.swift; sourceTree = "<group>"; };
+		2C18822E26DC022C00C79D35 /* UserInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoViewController.swift; sourceTree = "<group>"; };
+		2C1FB0E426DF802200A94A01 /* ImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewController.swift; sourceTree = "<group>"; };
 		2C8A087426D6A39A0008F896 /* LoginApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LoginApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2C8A087726D6A39A0008F896 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2C8A087926D6A39A0008F896 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -76,7 +78,8 @@
 			children = (
 				2C8A087B26D6A39A0008F896 /* LoginViewController.swift */,
 				2C8A088B26D6A9660008F896 /* WelcomeViewController.swift */,
-				2C18822E26DC022C00C79D35 /* AboutMePageOneViewController.swift */,
+				2C1FB0E426DF802200A94A01 /* ImageViewController.swift */,
+				2C18822E26DC022C00C79D35 /* UserInfoViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -188,7 +191,8 @@
 			files = (
 				2C8A087C26D6A39A0008F896 /* LoginViewController.swift in Sources */,
 				2C8A088C26D6A9660008F896 /* WelcomeViewController.swift in Sources */,
-				2C18822F26DC022D00C79D35 /* AboutMePageOneViewController.swift in Sources */,
+				2C18822F26DC022D00C79D35 /* UserInfoViewController.swift in Sources */,
+				2C1FB0E526DF802200A94A01 /* ImageViewController.swift in Sources */,
 				2C8A087826D6A39A0008F896 /* AppDelegate.swift in Sources */,
 				2CF1762326DACEEB0087B7D9 /* userData.swift in Sources */,
 				2C8A087A26D6A39A0008F896 /* SceneDelegate.swift in Sources */,

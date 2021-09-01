@@ -81,7 +81,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="34.782608695652179" y="93.75"/>
+            <point key="canvasLocation" x="330" y="92"/>
         </scene>
         <!--Home-->
         <scene sceneID="qYD-6s-KdF">
@@ -118,8 +118,7 @@
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <action selector="logOutPressed" destination="5Jq-vJ-2cO" eventType="touchUpInside" id="1XM-DL-cp1"/>
-                                    <segue destination="jvt-an-o1y" kind="unwind" unwindAction="unwindFor:" id="EzA-g2-pKJ"/>
+                                    <segue destination="jvt-an-o1y" kind="unwind" unwindAction="unwindWithSegue:" id="N22-vT-yzS"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -141,24 +140,18 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="POi-Wd-7ON" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="jvt-an-o1y" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1449" y="93"/>
+            <point key="canvasLocation" x="750" y="904"/>
         </scene>
         <!--MyName-->
         <scene sceneID="akS-js-XSK">
             <objects>
-                <viewController id="kBe-uW-sRG" customClass="AboutMePageOneViewController" customModule="LoginApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="kBe-uW-sRG" customClass="UserInfoViewController" customModule="LoginApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="dk6-zt-qSD">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sxi-2f-Wpn">
-                                <rect key="frame" x="163.5" y="321.5" width="48" height="24"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JVi-el-KLL">
-                                <rect key="frame" x="150" y="514" width="75" height="30"/>
+                                <rect key="frame" x="150" y="318.5" width="75" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="75" id="qyK-PA-i9I"/>
                                 </constraints>
@@ -171,48 +164,48 @@
                         <viewLayoutGuide key="safeArea" id="WT3-vf-GGb"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="sxi-2f-Wpn" firstAttribute="centerX" secondItem="dk6-zt-qSD" secondAttribute="centerX" id="Civ-mO-7xn"/>
-                            <constraint firstItem="sxi-2f-Wpn" firstAttribute="centerY" secondItem="dk6-zt-qSD" secondAttribute="centerY" id="aep-tD-gZH"/>
+                            <constraint firstItem="JVi-el-KLL" firstAttribute="centerY" secondItem="dk6-zt-qSD" secondAttribute="centerY" id="EZq-Th-prS"/>
                             <constraint firstItem="JVi-el-KLL" firstAttribute="centerX" secondItem="dk6-zt-qSD" secondAttribute="centerX" id="dLX-wU-u1s"/>
-                            <constraint firstItem="WT3-vf-GGb" firstAttribute="bottom" secondItem="JVi-el-KLL" secondAttribute="bottom" constant="74" id="rfL-0L-j8d"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="MyName" id="kLa-Un-Szn"/>
-                    <connections>
-                        <outlet property="AboutMePageOneLabel" destination="sxi-2f-Wpn" id="4vc-e6-wZ8"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1np-tN-ygN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2981.5999999999999" y="92.203898050974516"/>
+            <point key="canvasLocation" x="2338" y="904"/>
         </scene>
         <!--Item-->
         <scene sceneID="VeC-bW-IuO">
             <objects>
-                <viewController hidesBottomBarWhenPushed="YES" id="BoJ-Vr-STI" sceneMemberID="viewController">
+                <viewController hidesBottomBarWhenPushed="YES" id="BoJ-Vr-STI" customClass="ImageViewController" customModule="LoginApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5bT-NL-lh2">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="MyPhoto" translatesAutoresizingMaskIntoConstraints="NO" id="f86-yy-t1u">
-                                <rect key="frame" x="16" y="64" width="343" height="583"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Kmf-d2-UnF">
+                                <rect key="frame" x="67.5" y="213.5" width="240" height="240"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="240" id="HLh-eq-SYG"/>
+                                    <constraint firstAttribute="width" constant="240" id="PcV-Sy-QAo"/>
+                                </constraints>
                             </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="jLd-0I-TvB"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="jLd-0I-TvB" firstAttribute="trailing" secondItem="f86-yy-t1u" secondAttribute="trailing" constant="16" id="547-jj-ogL"/>
-                            <constraint firstItem="jLd-0I-TvB" firstAttribute="bottom" secondItem="f86-yy-t1u" secondAttribute="bottom" constant="20" id="7lI-87-PkH"/>
-                            <constraint firstItem="f86-yy-t1u" firstAttribute="top" secondItem="jLd-0I-TvB" secondAttribute="top" constant="20" id="8GG-83-tsX"/>
-                            <constraint firstItem="f86-yy-t1u" firstAttribute="leading" secondItem="jLd-0I-TvB" secondAttribute="leading" constant="16" id="nUL-Wy-Ryi"/>
+                            <constraint firstItem="Kmf-d2-UnF" firstAttribute="centerX" secondItem="5bT-NL-lh2" secondAttribute="centerX" id="4ha-1a-O9c"/>
+                            <constraint firstItem="Kmf-d2-UnF" firstAttribute="centerY" secondItem="5bT-NL-lh2" secondAttribute="centerY" id="88z-i1-0O9"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item" id="NK7-VU-aI1"/>
                     <navigationItem key="navigationItem" id="eV9-Mx-hFd"/>
+                    <connections>
+                        <outlet property="imageView" destination="Kmf-d2-UnF" id="wWw-Ml-XHJ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tgY-aL-zlb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3704.8000000000002" y="91.304347826086968"/>
+            <point key="canvasLocation" x="3154" y="904"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="1yD-z9-whq">
@@ -220,6 +213,7 @@
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="ojt-k2-jKP" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="FJ6-bR-rOv">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
@@ -230,7 +224,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nQc-VI-TxQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="750" y="93"/>
+            <point key="canvasLocation" x="1124" y="93"/>
         </scene>
         <!--AboutMe-->
         <scene sceneID="UHW-Sk-tQu">
@@ -249,11 +243,10 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xg3-kT-2Ae" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2226" y="93"/>
+            <point key="canvasLocation" x="1518" y="904"/>
         </scene>
     </scenes>
     <resources>
-        <image name="MyPhoto" width="960" height="1280"/>
         <image name="homekit" catalog="system" width="128" height="106"/>
         <image name="person.circle.fill" catalog="system" width="128" height="121"/>
         <systemColor name="systemBackgroundColor">
